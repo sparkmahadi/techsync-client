@@ -9,13 +9,12 @@ export const Nav = () => {
         <div className="bg-gray-900 nav-bg">
             <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
                 <div className="relative flex items-center justify-between">
-                    <Link
-                        href="/"
+                    <Link to='/'
                         aria-label="TechSync+"
                         title="TechSync+"
                         className="inline-flex items-center"
                     >
-                        <img className="h-6 w-6 text-white" src="logo.png" alt="" />
+                        <img className="h-6 w-6 text-white" src="../logo.png" alt="" />
                         <span className="ml-2 text-xl font-bold tracking-wide text-white hover:text-sky-300">
                             TechSync+
                         </span>

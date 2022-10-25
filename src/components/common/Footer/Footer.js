@@ -11,7 +11,7 @@ const Footer = () => {
                         <Link to='/'
                             className="inline-flex items-center"
                         >
-                            <img src="logo.png" className='w-6 h-6' alt="site-logo" />
+                            <img src="../logo.png" className='w-6 h-6' alt="site-logo" />
                             <span className="ml-2 text-xl font-bold tracking-wide text-white">
                                 TechSync+
                             </span>
