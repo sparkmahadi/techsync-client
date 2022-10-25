@@ -8,15 +8,15 @@ import { GrDocumentDownload } from 'react-icons/gr'
 const CourseDetails = () => {
     const details = useLoaderData();
     const { id, img, courseTitle, courseOverview, courseDetails, videoDuration, banner } = details;
-    // console.log(details);
+    console.log(details);
     return (
         <div className="bg-gray-200 text-white">
             <div className="container px-10 py-6 mx-auto rounded-lg shadow-sm">
                 <div className="bg-detail-heading flex items-center justify-between md:px-5 py-3 rounded-md">
                     <h2 className="text-2xl font-bold">{courseTitle}</h2>
-                    <div className='btn-bg cursor-pointer flex gap-2 border border-white py-1 px-2 rounded-md'>
-                        <p>Download PDF</p>
-                        <Link to='/checkout' className="btn bg-white px-2 py-1 font-bold rounded text-white"><GrDocumentDownload /></Link>
+                    <div className='btn-bg cursor-pointer flex items-center border border-white rounded-md'>
+                        <p className='px-2'>Download PDF</p>
+                        <Link to='/checkout' className="bg-white font-bold rounded text-white"><GrDocumentDownload className='h-8 w-8' /></Link>
                     </div>
                 </div>
 

@@ -68,30 +68,21 @@ export const Nav = () => {
                         </li>
                         <li>
                             <div to='/login'
-                                className="cursor-pointer bg-slate-500 flex items-center justify-center gap-2 h-12 px-6 text-white hover:text-sky-300 duration-200 rounded shadow-md"
+                                className="cursor-pointer bg-slate-500 flex items-center justify-center gap-2 h-12 px-2 text-white hover:bg-sky-700 duration-200 rounded shadow-md"
 
                             >
                                 {
                                     user?.uid ?
                                         <div className="flex items-center">
-                                            <span>{user?.displayName}</span>
-                                            {
-                                                user?.displayName ?
-                                                    <h2 className="text-xl">|</h2>
-                                                    :
-                                                    ''
-                                            }
                                             <Link>
                                                 {
                                                     user?.photoURL ?
-                                                        <div className="flex items-center">
-                                                            <img className="w-10 mr-2" src={user?.photoURL} alt="" />
-                                                            <h2 className="text-xl">|</h2>
+                                                        <div className="flex items-center" title={user?.displayName}>
+                                                            <img className="w-8 mr-2 border border-sky-300" src={user?.photoURL} alt="" />
                                                         </div>
                                                         :
                                                         <div className="flex items-center">
-                                                            <BiUserCircle className="w-7 h-7" />
-                                                            <h2 className="text-xl">|</h2>
+                                                            <BiUserCircle className="w-7 h-7 border border-sky-300 mr-2 rounded-md" />
                                                         </div>
                                                 }
                                             </Link>
