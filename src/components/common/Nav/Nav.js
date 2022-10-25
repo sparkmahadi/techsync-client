@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../contexts/UserContext";
 import './Nav.css'
+import { BiUserCircle } from 'react-icons/bi'
 
 export const Nav = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -72,11 +73,30 @@ export const Nav = () => {
                             >
                                 {
                                     user?.uid ?
-                                        <>
-                                            <span>{user?.email}</span>
-                                            <h2 className="text-xl">|</h2>
+                                        <div className="flex items-center">
+                                            <span>{user?.displayName}</span>
+                                            {
+                                                user?.displayName ?
+                                                    <h2 className="text-xl">|</h2>
+                                                    :
+                                                    ''
+                                            }
+                                            <Link>
+                                                {
+                                                    user?.photoURL ?
+                                                        <div className="flex items-center">
+                                                            <img className="w-10 mr-2" src={user?.photoURL} alt="" />
+                                                            <h2 className="text-xl">|</h2>
+                                                        </div>
+                                                        :
+                                                        <div className="flex items-center">
+                                                            <BiUserCircle className="w-7 h-7" />
+                                                            <h2 className="text-xl">|</h2>
+                                                        </div>
+                                                }
+                                            </Link>
                                             <button onClick={handleLogOut}>Log Out</button>
-                                        </>
+                                        </div>
                                         :
                                         <>
                                             <Link to='/login'>Log In</Link>
