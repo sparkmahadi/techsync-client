@@ -4,6 +4,8 @@ import Checkout from '../components/Checkout/Checkout';
 import CourseDetails from '../components/Courses/CoursesDetails/CourseDetailsRoot/CourseDetails';
 import CoursesRoot from '../components/Courses/CoursesRoot/CoursesRoot';
 import Home from '../components/Home/Home';
+import Login from '../components/Logging/Login/Login';
+import Register from '../components/Logging/Register/Register';
 import Main from '../layout/Main';
 import PrivateRouter from './PrivateRouter';
 
@@ -29,6 +31,14 @@ export const router = createBrowserRouter([
             {
                 path: '/checkout',
                 element: <PrivateRouter><Checkout></Checkout></PrivateRouter>
+            },
+            {
+                path: '/login',
+                element: <Login></Login>
+            },
+            {
+                path: '/register',
+                element: <Register></Register>
             }
         ]
     }

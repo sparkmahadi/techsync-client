@@ -10,8 +10,8 @@ const CourseRootDetails = ({ course }) => {
     return (
         <div className="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 card-p-bg rounded shadow-xl px-1 pt-1">
             <div className="p-5 bg-card">
-                <div className="">
-                    <img className='rounded-md' src={img} alt="" />
+                <div className="mx-auto">
+                    <img className='rounded-md mx-auto' src={img} alt="" />
                 </div>
                 <div className="my-2 font-bold flex justify-center items-top rounded-md">
                     <MdOutlineDriveFileRenameOutline className='w-6 h-6 mr-2' />
