@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import AsideCourseTitles from './AsideCourseTitles';
 
 const Aside = ({ courses }) => {
-    console.log(courses);
     return (
         <div className='aside-bg md:p-7 md:m-5 rounded-md'>
             <div className='rounded-md'>
