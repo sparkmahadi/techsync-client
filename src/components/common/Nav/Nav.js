@@ -1,10 +1,17 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../contexts/UserContext";
 import './Nav.css'
 
 export const Nav = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { user, logOut } = useContext(AuthContext);
 
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(e => console.error(e))
+    }
     return (
         <div className="bg-gray-900 nav-bg">
             <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
@@ -59,13 +66,23 @@ export const Nav = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link to='/login'
-                                className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white hover:text-sky-300 transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-                                aria-label="Login"
-                                title="Login"
+                            <div to='/login'
+                                className="cursor-pointer bg-slate-500 flex items-center justify-center gap-2 h-12 px-6 text-white hover:text-sky-300 duration-200 rounded shadow-md"
+
                             >
-                                Login
-                            </Link>
+                                {
+                                    user?.uid ?
+                                        <>
+                                            <span>{user?.email}</span>
+                                            <h2 className="text-xl">|</h2>
+                                            <button onClick={handleLogOut}>Log Out</button>
+                                        </>
+                                        :
+                                        <>
+                                            <Link to='/login'>Log In</Link>
+                                        </>
+                                }
+                            </div>
                         </li>
                     </ul>
                     <div className="lg:hidden">
