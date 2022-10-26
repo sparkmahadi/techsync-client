@@ -2,7 +2,7 @@ import React from 'react';
 
 const CourseOverview = ({ overView }) => {
     return (
-        <li className='list-disc list-inside mb-2'>
+        <li className='list-disc list-outside mb-2'>
             {overView}
         </li>
     );

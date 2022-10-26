@@ -1,12 +1,31 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../contexts/UserContext";
 import './Nav.css'
-import { BiUserCircle } from 'react-icons/bi'
+import { BiUserCircle } from 'react-icons/bi';
+import { BsFillMoonStarsFill, BsFillSunFill } from 'react-icons/bs'
 
 export const Nav = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [theme, setTheme] = useState("light-theme");
     const { user, logOut } = useContext(AuthContext);
+
+
+
+    useEffect(() => {
+        document.body.className = theme;
+    }, [theme])
+
+    const toggleTheme = () => {
+        if (theme === "dark-theme") {
+            setTheme("light-theme")
+        }
+        else {
+            setTheme("dark-theme")
+        }
+    }
+
+    // console.log(theme);
 
     const handleLogOut = () => {
         logOut()
@@ -57,13 +76,18 @@ export const Nav = () => {
                                 Blog
                             </Link>
                         </li>
-                        <li>
+                        <li onClick={toggleTheme}>
                             <Link
                                 aria-label="Theme"
-                                title="Theme"
+                                title={theme}
                                 className="font-medium tracking-wide text-white hover:text-sky-300 transition-colors duration-200 hover:text-teal-accent-400"
                             >
-                                Theme
+                                {
+                                    theme === "light-theme" ?
+                                        <BsFillSunFill className="w-6 h-6 sun-theme-bg" />
+                                        :
+                                        <BsFillMoonStarsFill className="w-6 h-6 moon-theme-bg" />
+                                }
                             </Link>
                         </li>
                         <li>
