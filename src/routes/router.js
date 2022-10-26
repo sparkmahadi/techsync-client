@@ -4,6 +4,8 @@ import Checkout from '../components/Checkout/Checkout';
 import CourseDetails from '../components/Courses/CoursesDetails/CourseDetailsRoot/CourseDetails';
 import CourseCategories from '../components/Courses/CoursesRoot/CourseCategories';
 import CoursesRoot from '../components/Courses/CoursesRoot/CoursesRoot';
+import ErrorRoute from '../components/ErrorRoute/ErrorRoute';
+import FAQ from '../components/FAQ/FAQ';
 import Home from '../components/Home/Home';
 import Login from '../components/Logging/Login/Login';
 import Register from '../components/Logging/Register/Register';
@@ -18,6 +20,10 @@ export const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>
+            },
+            {
+                path: '*',
+                element: <ErrorRoute></ErrorRoute>
             },
             {
                 path: '/courses',
@@ -35,8 +41,9 @@ export const router = createBrowserRouter([
                 loader: ({ params }) => fetch(`http://localhost:5000/course-category/${params.level}`)
             },
             {
-                path: '/checkout',
-                element: <PrivateRouter><Checkout></Checkout></PrivateRouter>
+                path: '/course-details/:id/checkout',
+                element: <PrivateRouter><Checkout></Checkout></PrivateRouter>,
+                loader: ({ params }) => fetch(`http://localhost:5000/course-details/${params.id}`)
             },
             {
                 path: '/login',
@@ -45,6 +52,11 @@ export const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '/faq',
+                element: <FAQ></FAQ>,
+                loader: () => fetch('http://localhost:5000/faq')
             }
         ]
     }

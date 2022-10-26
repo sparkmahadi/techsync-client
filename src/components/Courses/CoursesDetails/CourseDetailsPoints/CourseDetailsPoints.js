@@ -4,7 +4,7 @@ import { HiCheckCircle } from 'react-icons/hi'
 const CourseDetailsPoints = ({ point }) => {
     return (
         <li className='flex items-center'>
-            <HiCheckCircle className='mr-2'></HiCheckCircle>
+            <HiCheckCircle className='mr-2 h-5 w-5'></HiCheckCircle>
             {point}
         </li>
     );

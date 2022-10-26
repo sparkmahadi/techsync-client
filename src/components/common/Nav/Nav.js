@@ -22,7 +22,7 @@ export const Nav = () => {
                         title="TechSync+"
                         className="inline-flex items-center"
                     >
-                        <img className="h-6 w-6 text-white" src="../logo.png" alt="" />
+                        <img className="h-6 w-6 text-white" src="../../logo.png" alt="" />
                         <span className="ml-2 text-xl font-bold tracking-wide text-white hover:text-sky-300">
                             TechSync+
                         </span>
@@ -78,7 +78,7 @@ export const Nav = () => {
                                                 {
                                                     user?.photoURL ?
                                                         <div className="flex items-center" title={user?.displayName}>
-                                                            <img className="w-8 mr-2 border border-sky-300" src={user?.photoURL} alt="" />
+                                                            <img className="max-w-8 max-h-8 mr-2 border border-sky-300" src={user?.photoURL} alt="" />
                                                         </div>
                                                         :
                                                         <div className="flex items-center">
@@ -96,7 +96,29 @@ export const Nav = () => {
                             </div>
                         </li>
                     </ul>
-                    <div className="lg:hidden">
+                    <div className="lg:hidden flex items-center">
+                        <div>
+                            {
+                                user?.uid ?
+                                    <div className="flex items-center text-white">
+                                        <Link>
+                                            {
+                                                user?.photoURL ?
+                                                    <div className="flex items-center" title={user?.displayName}>
+                                                        <img className="max-w-8 max-h-8 mr-2 border border-sky-300" src={user?.photoURL} alt="" />
+                                                    </div>
+                                                    :
+                                                    <div className="flex items-center">
+                                                        <BiUserCircle className="w-7 h-7 border border-sky-300 mr-2 rounded-md" />
+                                                    </div>
+                                            }
+                                        </Link>
+                                    </div>
+                                    :
+                                    <>
+                                    </>
+                            }
+                        </div>
                         <button
                             aria-label="Open Menu"
                             title="Open Menu"
@@ -129,21 +151,7 @@ export const Nav = () => {
                                                 title="TechSync+"
                                                 className="inline-flex items-center"
                                             >
-                                                <svg
-                                                    className="w-8 text-deep-purple-accent-400"
-                                                    viewBox="0 0 24 24"
-                                                    strokeLinejoin="round"
-                                                    strokeWidth="2"
-                                                    strokeLinecap="round"
-                                                    strokeMiterlimit="10"
-                                                    stroke="currentColor"
-                                                    fill="none"
-                                                >
-                                                    <rect x="3" y="1" width="7" height="12" />
-                                                    <rect x="3" y="17" width="7" height="6" />
-                                                    <rect x="14" y="1" width="7" height="6" />
-                                                    <rect x="14" y="11" width="7" height="12" />
-                                                </svg>
+                                                <img className="h-6 w-6 text-white" src="../../logo-black.png" alt="" />
                                                 <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
                                                     TechSync+
                                                 </span>
@@ -204,13 +212,21 @@ export const Nav = () => {
                                                 </Link>
                                             </li>
                                             <li>
-                                                <Link
-                                                    className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-gray-700 hover:text-sky-300 transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-                                                    aria-label="Sign up"
-                                                    title="Sign up"
+                                                <div to='/login'
+                                                    className="cursor-pointer bg-slate-500 flex items-center justify-center gap-2 h-12 px-2 text-white hover:bg-sky-700 duration-200 rounded shadow-md"
+
                                                 >
-                                                    Sign up
-                                                </Link>
+                                                    {
+                                                        user?.uid ?
+                                                            <div className="flex items-center">
+                                                                <button onClick={handleLogOut}>Log Out</button>
+                                                            </div>
+                                                            :
+                                                            <>
+                                                                <Link to='/login'>Log In</Link>
+                                                            </>
+                                                    }
+                                                </div>
                                             </li>
                                         </ul>
                                     </nav>
