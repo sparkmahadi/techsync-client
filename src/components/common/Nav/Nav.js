@@ -141,7 +141,7 @@ export const Nav = () => {
                             {
                                 user?.uid ?
                                     <div className="flex items-center text-white">
-                                        <Link>
+                                        <Link to='/profile'>
                                             {
                                                 user?.photoURL ?
                                                     <div className="flex items-center" title={user?.displayName}>
@@ -185,8 +185,7 @@ export const Nav = () => {
                                 <div className="p-5 bg-white border rounded shadow-sm nav-mobile-menu">
                                     <div className="flex items-center justify-between mb-4">
                                         <div>
-                                            <Link
-                                                href="/"
+                                            <Link to='/'
                                                 aria-label="TechSync+"
                                                 title="TechSync+"
                                                 className="inline-flex items-center"
