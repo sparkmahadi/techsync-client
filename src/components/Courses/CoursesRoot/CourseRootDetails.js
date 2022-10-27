@@ -6,7 +6,7 @@ import './CourseRootDetails.css'
 import { Link } from 'react-router-dom';
 
 const CourseRootDetails = ({ course }) => {
-    console.log(course);
+    // console.log(course);
     const { id, courseTitle, img, videoDuration, level } = course;
     return (
         <div data-aos="zoom-in-up" data-aos-duration="500" className="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 card-p-bg rounded shadow-xl px-1 pt-1">
