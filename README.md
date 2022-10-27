@@ -25,3 +25,4 @@
 - React to PDF
 - React Hook Form
 - AOS
+- Vercel
