@@ -77,7 +77,7 @@ const Login = () => {
                 <p className='pb-2'>New to the site? Please <Link className='text-blue-700 font-semibold' to='/register'>Register</Link> Now!</p>
 
                 <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5">Login</button>
-                <p className='pb-2 text-center'>Forgot Password? <Link to='/reset-password' className='text-blue-700 font-semibold'>Reset</Link> Your Password.</p>
+                <p className='py-2 text-center'>Forgot Password? <Link to='/reset-password' className='text-blue-700 font-semibold'>Reset</Link> Your Password.</p>
                 <div>
                     <div onClick={handleGoogleLogin} className='cursor-pointer flex bg-gray-200 justify-center p-2 rounded-md mt-2 lg:w-1/2 mx-auto'>
                         <FcGoogle className='w-6 h-6' />

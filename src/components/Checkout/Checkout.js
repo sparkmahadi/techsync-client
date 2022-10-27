@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { BiRename, BiVideoRecording } from 'react-icons/bi'
 import { GiLevelEndFlag, GiPriceTag } from 'react-icons/gi';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Checkout = () => {
+    const [bought, setBought] = useState(false);
     const { courseTitle, price, videoDuration, level } = useLoaderData();
 
+    const handlePurchase = event => {
+        event.currentTarget.disabled = true;
+        console.log('button clicked');
+        setBought(true);
+        toast.success(`Congratulations! You've enrolled for the course "${courseTitle}"`)
+    }
     return (
         <div className="bg-gray-200 text-white max-w-xl mx-auto md:my-10 rounded-md">
+            <ToastContainer position='top-center' />
             <div className="container px-10 py-6 mx-auto rounded-lg shadow-sm">
                 <div className="bg-detail-heading p-5 md:p-10 rounded-md">
                     <div className='flex items-center mb-2'>
@@ -26,7 +36,11 @@ const Checkout = () => {
                         <GiPriceTag className='w-6 h-6' />
                         <h3 className="ml-2 text-sm md:text-md">Price: {price} TK</h3>
                     </div>
-                    <button className='nav-bg block mx-auto p-2 rounded-md mt-10 text-sm md:text-md'>Confirm Purchase</button>
+                    {
+                        bought ? <button onClick={handlePurchase} className='nav-bg block mx-auto p-2 rounded-md mt-10 text-sm md:text-md'>Purchased</button>
+                            :
+                            <button onClick={handlePurchase} className='nav-bg block mx-auto p-2 rounded-md mt-10 text-sm md:text-md'>Confirm Purchase</button>
+                    }
                 </div>
             </div>
         </div>
