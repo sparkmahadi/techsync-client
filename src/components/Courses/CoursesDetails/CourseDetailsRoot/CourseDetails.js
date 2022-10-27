@@ -10,9 +10,9 @@ import Pdf from "react-to-pdf";
 
 const ref = React.createRef();
 const options = {
-    orientation: 'landscape',
+    orientation: 'potrait',
     unit: 'px',
-    format: [760, 680]
+    format: [1080, 1920]
 }
 
 const CourseDetails = () => {
@@ -26,7 +26,7 @@ const CourseDetails = () => {
                 <div data-aos="fade-down" data-aos-duration="1000" className="bg-detail-heading flex items-center justify-between px-5 py-3 rounded-md">
                     <h2 className="text-2xl font-bold text-center md:text-left">{courseTitle}</h2>
 
-                    <Pdf targetRef={ref} options={options} filename="course-details.pdf">
+                    <Pdf targetRef={ref} options={options} filename={`${courseTitle}-course.pdf`}>
                         {({ toPdf }) =>
 
                             <div onClick={toPdf} className='btn-bg cursor-pointer flex justify-center max-w-sm items-center border border-white rounded-md'>

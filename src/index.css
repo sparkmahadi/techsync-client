@@ -58,3 +58,7 @@ code {
 .light-theme .nav-mobile-menu {
   color: black;
 }
+
+.min-h-custom {
+  min-height: 70vh;
+}

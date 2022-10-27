@@ -6,7 +6,7 @@ const FAQ = () => {
     const questions = useLoaderData();
     return (
 
-        <div data-aos="fade-down-right" data-aos-duration="1000" className='faq-div'>
+        <div data-aos="fade-down-right" data-aos-duration="1000" className='faq-div min-h-custom'>
             <section>
                 <div className="container flex flex-col justify-center p-4 mx-auto md:p-8">
                     <h2 className="mb-12 text-4xl font-bold leading-none text-center">Frequently Asked Questions</h2>

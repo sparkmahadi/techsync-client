@@ -6,7 +6,7 @@ const Blog = () => {
     const blogs = useLoaderData();
     console.log(blogs);
     return (
-        <div data-aos="fade-down-left" data-aos-duration="1000" className='blog-div'>
+        <div data-aos="fade-down-left" data-aos-duration="1000" className='blog-div min-h-custom'>
             <section>
                 <div className="container flex flex-col justify-center p-4 mx-auto md:p-8">
                     <h2 className="mb-12 text-4xl font-bold leading-none text-center">Blog : (Authentication and React Router)</h2>
