@@ -13,7 +13,7 @@ const Aside = ({ courses }) => {
 
     return (
         <div className='aside-bg p-5 md:p-7 md:m-5 rounded-md'>
-            <div className='rounded-md'>
+            <div data-aos="flip-left" data-aos-duration="500" className='rounded-md'>
                 <h2 className='text-center bg-sky-800 text-white p-2 rounded-t-md'>Categories</h2>
                 <ul className="menu bg-base-100 lg:w-56 rounded-b-md justify-center">
 
@@ -23,7 +23,7 @@ const Aside = ({ courses }) => {
                     }
                 </ul>
             </div>
-            <div className='rounded-md mt-7'>
+            <div data-aos="flip-right" data-aos-duration="500" className='rounded-md mt-7'>
                 <h2 className='text-center bg-sky-800 text-white p-2 rounded-t-md'>Courses</h2>
                 <ul className="menu bg-base-100 lg:w-56 rounded-b-md">
                     {

@@ -11,6 +11,7 @@ import Home from '../components/Home/Home';
 import Login from '../components/Logging/Login/Login';
 import Register from '../components/Logging/Register/Register';
 import ResetPassword from '../components/Logging/ResetPassword/ResetPassword';
+import Profile from '../components/Profile/Profile';
 import Main from '../layout/Main';
 import PrivateRouter from './PrivateRouter';
 
@@ -21,6 +22,10 @@ export const router = createBrowserRouter([
         children: [
             {
                 path: '/',
+                element: <Home></Home>
+            },
+            {
+                path: '/home',
                 element: <Home></Home>
             },
             {
@@ -68,6 +73,10 @@ export const router = createBrowserRouter([
             {
                 path: '/reset-password',
                 element: <ResetPassword></ResetPassword>
+            },
+            {
+                path: '/profile',
+                element: <Profile></Profile>
             }
         ]
     }

@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../contexts/UserContext";
 import './Nav.css'
 import { BiUserCircle } from 'react-icons/bi';
@@ -32,6 +32,9 @@ export const Nav = () => {
             .then(() => { })
             .catch(e => console.error(e))
     }
+    let activeStyle = {
+        textDecoration: "underline",
+    };
     return (
         <div className="bg-gray-900 nav-bg">
             <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
@@ -48,57 +51,73 @@ export const Nav = () => {
                     </Link>
                     <ul className="flex items-center hidden space-x-8 lg:flex">
                         <li>
-                            <Link
+                            <NavLink
+                                to="/home"
+                                aria-label="Home"
+                                title="Home"
+                                className={`font-medium tracking-wide text-white hover:text-sky-300`}
+                            >
+                                Home
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink
                                 to="/courses"
                                 aria-label="Courses"
                                 title="Courses"
-                                className="font-medium tracking-wide text-white hover:text-sky-300 transition-colors duration-200 hover:text-teal-accent-400"
+                                className={`font-medium tracking-wide text-white hover:text-sky-300`}
                             >
                                 Courses
-                            </Link>
+                            </NavLink>
                         </li>
                         <li>
-                            <Link
+                            <NavLink
                                 to='/faq'
                                 aria-label="FAQ"
                                 title="FAQ"
-                                className="font-medium tracking-wide text-white hover:text-sky-300 transition-colors duration-200 hover:text-teal-accent-400"
+                                className="font-medium tracking-wide text-white hover:text-sky-300"
                             >
                                 FAQ
-                            </Link>
+                            </NavLink>
                         </li>
                         <li>
-                            <Link to='/blog'
+                            <NavLink to='/blog'
                                 aria-label="Blog"
                                 title="Blog"
-                                className="font-medium tracking-wide text-white hover:text-sky-300 transition-colors duration-200 hover:text-teal-accent-400"
+                                className="font-medium tracking-wide text-white hover:text-sky-300"
                             >
                                 Blog
-                            </Link>
+                            </NavLink>
                         </li>
                         <li onClick={toggleTheme}>
                             <Link
                                 aria-label="Theme"
                                 title={theme}
-                                className="font-medium tracking-wide text-white hover:text-sky-300 transition-colors duration-200 hover:text-teal-accent-400"
+                                className="font-medium tracking-wide text-white hover:text-sky-300"
                             >
                                 {
                                     theme === "light-theme" ?
-                                        <BsFillSunFill className="w-6 h-6 sun-theme-bg" />
+                                        <div className="flex gap-2 items-center">
+                                            <p>Light | </p>
+                                            <BsFillSunFill className="w-6 h-6 sun-theme-bg" />
+                                        </div>
                                         :
-                                        <BsFillMoonStarsFill className="w-6 h-6 moon-theme-bg" />
+                                        <div className="flex gap-2 items-center">
+                                            <p>Dark | </p>
+                                            <BsFillMoonStarsFill className="w-6 h-6 moon-theme-bg" />
+                                        </div>
                                 }
                             </Link>
                         </li>
                         <li>
                             <div to='/login'
-                                className="cursor-pointer bg-slate-500 flex items-center justify-center gap-2 h-12 px-2 text-white hover:bg-sky-700 duration-200 rounded shadow-md"
+                                className="cursor-pointer bg-slate-500 flex items-center justify-center gap-2 py-1 px-2 text-white hover:bg-sky-700 duration-200 rounded shadow-md"
 
                             >
                                 {
                                     user?.uid ?
                                         <div className="flex items-center">
-                                            <Link>
+                                            <Link to='/profile'>
                                                 {
                                                     user?.photoURL ?
                                                         <div className="flex items-center" title={user?.displayName}>
@@ -165,8 +184,8 @@ export const Nav = () => {
                             </svg>
                         </button>
                         {isMenuOpen && (
-                            <div className="absolute top-0 left-0 w-full">
-                                <div className="p-5 bg-white border rounded shadow-sm">
+                            <div className="absolute top-0 left-0 w-full z-10">
+                                <div className="p-5 bg-white border rounded shadow-sm nav-mobile-menu">
                                     <div className="flex items-center justify-between mb-4">
                                         <div>
                                             <Link
@@ -175,8 +194,12 @@ export const Nav = () => {
                                                 title="TechSync+"
                                                 className="inline-flex items-center"
                                             >
-                                                <img className="h-6 w-6 text-white" src="../../logo-black.png" alt="" />
-                                                <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
+                                                {
+                                                    theme === 'dark-theme' ? <img className="h-6 w-6" src="../../logo.png" alt="" />
+                                                        :
+                                                        <img className="h-6 w-6" src="../../logo-black.png" alt="" />
+                                                }
+                                                <span className="ml-2 text-xl font-bold tracking-wide uppercase">
                                                     TechSync+
                                                 </span>
                                             </Link>
@@ -200,10 +223,19 @@ export const Nav = () => {
                                     <nav>
                                         <ul className="space-y-4">
                                             <li>
+                                                <Link to='/'
+                                                    aria-label="Home"
+                                                    title="Home"
+                                                    className="font-medium tracking-wide"
+                                                >
+                                                    Home
+                                                </Link>
+                                            </li>
+                                            <li>
                                                 <Link to='/courses'
                                                     aria-label="Courses"
                                                     title="Courses"
-                                                    className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                                                    className="font-medium tracking-wide"
                                                 >
                                                     Courses
                                                 </Link>
@@ -212,7 +244,7 @@ export const Nav = () => {
                                                 <Link to='/faq'
                                                     aria-label="FAQ"
                                                     title="FAQ"
-                                                    className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                                                    className="font-medium tracking-wide"
                                                 >
                                                     FAQ
                                                 </Link>
@@ -221,18 +253,29 @@ export const Nav = () => {
                                                 <Link to='/blog'
                                                     aria-label="Blog"
                                                     title="Blog"
-                                                    className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                                                    className="font-medium tracking-wide"
                                                 >
                                                     Blog
                                                 </Link>
                                             </li>
-                                            <li>
+                                            <li onClick={toggleTheme}>
                                                 <Link
                                                     aria-label="Theme"
-                                                    title="Theme"
-                                                    className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                                                    title={theme}
+                                                    className="font-medium tracking-wide text-white hover:text-sky-300 transition-colors duration-200 hover:text-teal-accent-400"
                                                 >
-                                                    Theme
+                                                    {
+                                                        theme === "light-theme" ?
+                                                            <div className="flex gap-2 items-center">
+                                                                <p className="text-gray-900">Light | </p>
+                                                                <BsFillSunFill className="w-6 h-6 sun-theme-bg text-orange-500" />
+                                                            </div>
+                                                            :
+                                                            <div className="flex gap-2 items-center">
+                                                                <p className="text-white">Dark | </p>
+                                                                <BsFillMoonStarsFill className="w-6 h-6 moon-theme-bg" />
+                                                            </div>
+                                                    }
                                                 </Link>
                                             </li>
                                             <li>
@@ -260,6 +303,6 @@ export const Nav = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };

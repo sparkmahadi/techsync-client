@@ -6,7 +6,7 @@ import { FaGithub } from 'react-icons/fa';
 
 const Login = () => {
     const [error, setError] = useState('');
-    const { logIn, logInWithGoogle, logInWithGithub, resetPassword } = useContext(AuthContext);
+    const { logIn, logInWithGoogle, logInWithGithub } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -59,16 +59,6 @@ const Login = () => {
             })
     }
 
-    const handleResetPassword = (email) => {
-        resetPassword(email)
-            .then(() => {
-                console.log('password reset email sent');
-            })
-            .catch(e => {
-                console.error(e);
-                setError(e);
-            })
-    }
     return (
         <div>
             <h2 className='bg-sky-600 p-2 text-white text-center text-2xl font-semibold'>Log in...</h2>
@@ -76,11 +66,11 @@ const Login = () => {
             <form onSubmit={handleSubmit} className='container mx-auto bg-white px-5 px-10 py-10 rounded-lg text-gray-900 md:w-2/3 lg:w-1/2'>
                 <div className="mb-6">
                     <label htmlFor="email" className="block mb-2 text-lg font-medium">Your email</label>
-                    <input type="email" name='email' id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" placeholder="Enter Your Email" required="" />
+                    <input type="email" name='email' id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" placeholder="Enter Your Email" required />
                 </div>
                 <div className="mb-6">
                     <label htmlFor="password" className="block mb-2 text-lg font-medium">Your password</label>
-                    <input type="password" name='password' id="password" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-l block w-full p-2.5" placeholder='Enter Your Password' required="" />
+                    <input type="password" name='password' id="password" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-l block w-full p-2.5" placeholder='Enter Your Password' required />
                 </div>
 
                 <p className='text-red-600 mb-2'>{error}</p>

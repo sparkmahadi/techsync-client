@@ -33,6 +33,11 @@ code {
   color: white;
 }
 
+.light-theme .faq-div,
+.light-theme .blog-div {
+  background-color: white;
+}
+
 .dark-theme .moon-theme-bg {
   background-color: white;
   color: rgba(24, 23, 23, 0.849);
@@ -43,4 +48,13 @@ code {
 .dark-theme .home-div h5,
 .dark-theme .home-div p {
   color: white;
+}
+
+.dark-theme .nav-mobile-menu {
+  background-color: black;
+  color: white;
+}
+
+.light-theme .nav-mobile-menu {
+  color: black;
 }
