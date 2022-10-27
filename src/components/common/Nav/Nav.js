@@ -223,40 +223,40 @@ export const Nav = () => {
                                     <nav>
                                         <ul className="space-y-4">
                                             <li>
-                                                <Link to='/'
+                                                <NavLink to='/home'
                                                     aria-label="Home"
                                                     title="Home"
                                                     className="font-medium tracking-wide"
                                                 >
                                                     Home
-                                                </Link>
+                                                </NavLink>
                                             </li>
                                             <li>
-                                                <Link to='/courses'
+                                                <NavLink to='/courses'
                                                     aria-label="Courses"
                                                     title="Courses"
                                                     className="font-medium tracking-wide"
                                                 >
                                                     Courses
-                                                </Link>
+                                                </NavLink>
                                             </li>
                                             <li>
-                                                <Link to='/faq'
+                                                <NavLink to='/faq'
                                                     aria-label="FAQ"
                                                     title="FAQ"
                                                     className="font-medium tracking-wide"
                                                 >
                                                     FAQ
-                                                </Link>
+                                                </NavLink>
                                             </li>
                                             <li>
-                                                <Link to='/blog'
+                                                <NavLink to='/blog'
                                                     aria-label="Blog"
                                                     title="Blog"
                                                     className="font-medium tracking-wide"
                                                 >
                                                     Blog
-                                                </Link>
+                                                </NavLink>
                                             </li>
                                             <li onClick={toggleTheme}>
                                                 <Link
