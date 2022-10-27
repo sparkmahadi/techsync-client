@@ -13,7 +13,7 @@ const CourseCategories = () => {
     }, [])
     return (
         <div>
-            <div className="bg-gray-200 md:flex md:flex-row-reverse">
+            <div className="md:flex md:flex-row-reverse 2xl:px-56">
 
                 <div className="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl lg:px-8 py-6">
 
