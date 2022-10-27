@@ -61,9 +61,9 @@ const Login = () => {
 
     return (
         <div>
-            <h2 className='bg-sky-600 p-2 text-white text-center text-2xl font-semibold'>Log in...</h2>
+            <h2 data-aos="fade-right" data-aos-duration="1000" className='bg-sky-600 p-2 text-white text-center text-2xl font-semibold'>Log in...</h2>
 
-            <form onSubmit={handleSubmit} className='container mx-auto bg-white px-5 px-10 py-10 rounded-lg text-gray-900 md:w-2/3 lg:w-1/2'>
+            <form data-aos="fade-left" data-aos-duration="1000" onSubmit={handleSubmit} className='container mx-auto bg-white px-5 px-10 py-10 rounded-lg text-gray-900 md:w-2/3 lg:w-1/2'>
                 <div className="mb-6">
                     <label htmlFor="email" className="block mb-2 text-lg font-medium">Your email</label>
                     <input type="email" name='email' id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" placeholder="Enter Your Email" required />

@@ -117,11 +117,11 @@ export const Nav = () => {
                                             <Link to='/profile'>
                                                 {
                                                     user?.photoURL ?
-                                                        <div className="flex items-center" title={user?.displayName}>
+                                                        <div className="flex items-center" title={user?.displayName ? user.displayName : 'No Name'}>
                                                             <img className="max-w-8 max-h-8 mr-2 border border-sky-300" src={user?.photoURL} alt="" />
                                                         </div>
                                                         :
-                                                        <div className="flex items-center">
+                                                        <div className="flex items-center" title={user?.displayName ? user.displayName : 'No Name'}>
                                                             <BiUserCircle className="w-7 h-7 border border-sky-300 mr-2 rounded-md" />
                                                         </div>
                                                 }

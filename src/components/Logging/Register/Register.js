@@ -42,8 +42,8 @@ const Register = () => {
 
     return (
         <div>
-            <h2 className='bg-sky-600 p-2 text-white text-center text-2xl font-semibold'>Registration...</h2>
-            <form onSubmit={handleSubmit} className='container mx-auto bg-white px-10 py-10 rounded-lg text-gray-900 md:w-2/3 lg:w-1/2'>
+            <h2 data-aos="fade-left" data-aos-duration="1000" className='bg-sky-600 p-2 text-white text-center text-2xl font-semibold'>Registration...</h2>
+            <form data-aos="fade-right" data-aos-duration="1000" onSubmit={handleSubmit} className='container mx-auto bg-white px-10 py-10 rounded-lg text-gray-900 md:w-2/3 lg:w-1/2'>
 
                 <div className="mb-6">
                     <label htmlFor="name" className="block mb-2 text-lg font-medium">Your Full Name:</label>
