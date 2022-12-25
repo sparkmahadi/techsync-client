@@ -1,5 +1,7 @@
 import React from 'react';
+import Counter from '../Counter/Counter';
 import Creative from '../Creative/Creative';
+import Explore from '../Explore/Explore';
 import Reviews from '../Reviews/Reviews';
 import Hero from './../Hero/Hero';
 import Popular from './../Popular/Popular';
@@ -10,6 +12,8 @@ const Home = () => {
             <Hero></Hero>
             <Popular></Popular>
             <Creative></Creative>
+            <Counter></Counter>
+            <Explore></Explore>
             <Reviews></Reviews>
         </div>
     );

@@ -10,7 +10,7 @@ const Creative = () => {
         "Connect with a global community of curious creatives."
     ]
     return (
-        <div className='flex items-center gap-5 justify-around p-20'>
+        <div className='flex items-center gap-5 justify-around p-20 bg-secondary text-white rounded-lg my-5'>
             <div className='flex items-center gap-5 w-1/3'>
                 <h2 className='text-3xl font-semibold text-center leading-snug'>Get Creative with TechSync+</h2>
                 <CgArrowsHAlt className='w-16 h-16' />

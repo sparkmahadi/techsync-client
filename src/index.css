@@ -23,6 +23,14 @@ code {
   background-color: rgba(0, 0, 0, 0.87)
 }
 
+.bg-secondary {
+  background: linear-gradient(90deg, rgba(2, 2, 77, 0.47) 0%, rgba(79, 132, 161, 1) 50%, rgba(3, 42, 59, 1) 100%);
+}
+
+.bg-secondary-reverse {
+background: linear-gradient(90deg, rgba(3,42,59,1) 0%, rgba(79,132,161,1) 50%, rgba(2, 2, 77, 0.47) 100%);
+}
+
 .dark-theme .bg-card {
   background-color: rgb(68, 100, 160);
   border-radius: 10px;
@@ -62,5 +70,3 @@ code {
 .min-h-custom {
   min-height: 70vh;
 }
-
-
