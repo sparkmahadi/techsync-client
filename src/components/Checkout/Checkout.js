@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import { BiRename, BiVideoRecording } from 'react-icons/bi'
 import { GiLevelEndFlag, GiPriceTag } from 'react-icons/gi';
 import { toast, ToastContainer } from 'react-toastify';
@@ -40,7 +40,7 @@ const Checkout = () => {
                         {
                             bought ? <button onClick={handlePurchase} className='nav-bg block mx-auto p-2 rounded-md mt-10 text-sm md:text-md'>Purchased</button>
                                 :
-                                <button onClick={handlePurchase} className='nav-bg block mx-auto p-2 rounded-md mt-10 text-sm md:text-md'>Confirm Purchase</button>
+                                    <Link to='/payment'><button className='nav-bg block mx-auto p-2 rounded-md mt-10 text-sm md:text-md'>Confirm Purchase</button></Link>
                         }
                     </div>
                 </div>

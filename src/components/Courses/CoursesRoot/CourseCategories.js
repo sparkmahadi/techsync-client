@@ -7,7 +7,7 @@ const CourseCategories = () => {
     const [courses, setCourses] = useState([]);
     const selectedCourses = useLoaderData();
     useEffect(() => {
-        fetch('https://techsync-server.vercel.app/courses')
+        fetch('http://localhost:5000/courses')
             .then(r => r.json())
             .then(d => setCourses(d))
     }, [])
