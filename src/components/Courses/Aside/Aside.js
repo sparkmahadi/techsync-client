@@ -6,7 +6,7 @@ import { useState } from 'react';
 const Aside = ({ courses }) => {
     const [categories, setCategories] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/course-categories')
+        fetch('https://techsync-server.vercel.app/course-categories')
             .then(r => r.json())
             .then(d => setCategories(d));
     }, [])

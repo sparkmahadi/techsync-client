@@ -9,7 +9,7 @@ const ErrorRoute = () => {
                 <div className='container flex flex-col items-center justify-center p-5 mx-auto my-'>
                     <MdOutlineErrorOutline className='w-24 h-24 text-gray-600' />
                     <div className='max-w-md text-center'>
-                        <h2 className='mb-5 lg:mb-8 font-extrabold text-3xl md:text-7xl text-gray-600'>
+                        <h2 className='mb-5 lg:mb-8 font-extrabold text-xl lg:text-3xl md:text-7xl text-gray-600'>
                             404 Error!
                         </h2>
                         <p className='text-lg font-semibold md:text-3xl mb-5 lg:mb-8'>

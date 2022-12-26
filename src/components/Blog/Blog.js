@@ -9,7 +9,7 @@ const Blog = () => {
         <div data-aos="fade-down-left" data-aos-duration="1000" className='blog-div min-h-custom'>
             <section>
                 <div className="container flex flex-col justify-center p-4 mx-auto md:p-8">
-                    <h2 className="mb-12 text-4xl font-bold leading-none text-center">Blog : (Authentication and React Router)</h2>
+                    <h2 className="mb-12 text-xl lg:text-3xl font-bold leading-none text-center">Blog : (Authentication and React Router)</h2>
                     <div className="flex flex-col divide-y sm:px-8 lg:px-12 xl:px-32 divide-gray-700">
                         {
                             blogs.map((blog, idx) => <BlogDetails

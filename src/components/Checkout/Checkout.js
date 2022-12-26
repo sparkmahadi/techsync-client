@@ -38,9 +38,10 @@ const Checkout = () => {
                             <h3 className="ml-2 text-sm md:text-md">Price: {price} TK</h3>
                         </div>
                         {
-                            bought ? <button onClick={handlePurchase} className='nav-bg block mx-auto p-2 rounded-md mt-10 text-sm md:text-md'>Purchased</button>
+                            bought ? <button className='nav-bg block mx-auto p-2 rounded-md mt-10 text-sm md:text-md'>Purchased</button>
                                 :
-                                    <Link to='/payment'><button className='nav-bg block mx-auto p-2 rounded-md mt-10 text-sm md:text-md'>Confirm Purchase</button></Link>
+                                    <button  onClick={handlePurchase} className='nav-bg block mx-auto p-2 rounded-md mt-10 text-sm md:text-md'>Confirm Purchase</button>
+                                    // <Link to='/payment'><button className='nav-bg block mx-auto p-2 rounded-md mt-10 text-sm md:text-md'>Confirm Purchase</button></Link>
                         }
                     </div>
                 </div>

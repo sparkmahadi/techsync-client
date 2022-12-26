@@ -46,7 +46,7 @@ export const Nav = () => {
                             TechSync+
                         </span>
                     </Link>
-                    <ul className="flex items-center hidden space-x-8 lg:flex">
+                    <ul className="items-center hidden space-x-8 lg:flex">
                         <li>
                             <NavLink
                                 to="/home"

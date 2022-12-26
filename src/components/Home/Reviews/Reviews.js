@@ -32,14 +32,12 @@ const Reviews = () => {
 
     ]
     return (
-        <div className=''>
-            <h2 className='text-xl font-semibold mb-2'>Reviews</h2>
-            <hr className='mb-5'/>
-            <div className='flex items-center gap-5  bg-card p-5 rounded-lg'>
-                <div className='w-1/4 rounded-lg'>
+        <div data-aos="zoom-in" className='mt-10 lg:mt-20 mb-10'>
+            <div className='lg:flex items-center gap-5  bg-secondary-reverse px-10 py-10 lg:py-20 rounded-lg'>
+                <div data-aos="fade-right" className='lg:w-2/5 rounded-lg mb-5 lg:mb-0'>
                     <h3 className='text-2xl text-white text-center tracking-wide leading-relaxed'>Over <span className='font-semibold'>25 million learners</span> have used TechSync+ to empower themselves through education</h3>
                 </div>
-                <div className='w-3/4'>
+                <div data-aos="fade-left" className='lg:w-3/5'>
                     <Swiper
                         modules={[Navigation]}
                         navigation
@@ -67,7 +65,7 @@ const Reviews = () => {
                         {
                             reviews.map((review, i) =>
                                 <SwiperSlide>
-                                    <div key={i} className="flex flex-col justify-between p-5 rounded shadow-lg h-56 bg-sky-600">
+                                    <div key={i} className="flex flex-col justify-between p-5 rounded shadow-lg h-56 bg-card">
                                         <div className='text-white'>
                                             <div className='flex justify-between mb-2 items-center'>
                                                 <div className="flex items-center justify-center w-10 h-10 rounded-full bg-indigo-50">

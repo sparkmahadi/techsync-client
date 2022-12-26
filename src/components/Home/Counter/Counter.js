@@ -24,15 +24,15 @@ const Counter = () => {
         },
     ]
     return (
-        <div className='flex gap-10 bg-secondary-reverse p-20 rounded-lg items-center justify-center text-white mb-5'>
+        <div data-aos="fade-down" className='md:flex gap-10 bg-secondary-reverse p-10 lg:p-20 rounded-lg items-center justify-center text-white mb-5 mt-10 lg:mt-20'>
             {
                 items.map((item, i) =>
-                    <div className='bg-sky-600 p-3 rounded-lg w-44 text-center' key={i}>
-                        <div className='flex justify-center text-green-300 text-3xl font-bold pb-3'>
+                    <div className='bg-sky-600 p-3 rounded-lg md:w-44 text-center mb-5 md:mb-0' key={i}>
+                        <div className='flex justify-center text-green-300 text-xl lg:text-3xl font-bold pb-3'>
                             <p>{item.count}</p>
                             <p>{item.unit}</p>
                         </div>
-                        <p className='uppercase'>{item.title}</p>
+                        <p className='uppercase font-semibold'>{item.title}</p>
                     </div>
                 )
             }

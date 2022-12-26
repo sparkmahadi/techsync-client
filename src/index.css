@@ -24,11 +24,11 @@ code {
 }
 
 .bg-secondary {
-  background: linear-gradient(90deg, rgba(2, 2, 77, 0.47) 0%, rgba(79, 132, 161, 1) 50%, rgba(3, 42, 59, 1) 100%);
+  background: linear-gradient(90deg, rgba(2, 2, 77, 0.671) 0%, rgba(79, 132, 161, 1) 50%, rgba(3, 42, 59, 1) 100%);
 }
 
 .bg-secondary-reverse {
-background: linear-gradient(90deg, rgba(3,42,59,1) 0%, rgba(79,132,161,1) 50%, rgba(2, 2, 77, 0.47) 100%);
+background: linear-gradient(90deg, rgba(3,42,59,1) 0%, rgba(79,132,161,1) 50%, rgba(2, 2, 77, 0.671) 100%);
 }
 
 .dark-theme .bg-card {

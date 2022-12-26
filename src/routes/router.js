@@ -36,22 +36,22 @@ export const router = createBrowserRouter([
             {
                 path: '/courses',
                 element: <CoursesRoot></CoursesRoot>,
-                loader: () => fetch('http://localhost:5000/courses')
+                loader: () => fetch('https://techsync-server.vercel.app/courses')
             },
             {
                 path: '/course-details/:id',
                 element: <CourseDetails></CourseDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/course-details/${params.id}`)
+                loader: ({ params }) => fetch(`https://techsync-server.vercel.app/course-details/${params.id}`)
             },
             {
                 path: '/course-category/:level',
                 element: <CourseCategories></CourseCategories>,
-                loader: ({ params }) => fetch(`http://localhost:5000/course-category/${params.level}`)
+                loader: ({ params }) => fetch(`https://techsync-server.vercel.app/course-category/${params.level}`)
             },
             {
                 path: '/course-details/:id/checkout',
                 element: <PrivateRouter><Checkout></Checkout></PrivateRouter>,
-                loader: ({ params }) => fetch(`http://localhost:5000/course-details/${params.id}`)
+                loader: ({ params }) => fetch(`https://techsync-server.vercel.app/course-details/${params.id}`)
             },
             {
                 path: '/login',
@@ -64,12 +64,11 @@ export const router = createBrowserRouter([
             {
                 path: '/faq',
                 element: <FAQ></FAQ>,
-                loader: () => fetch('http://localhost:5000/faq')
             },
             {
                 path: '/blog',
                 element: <Blog></Blog>,
-                loader: () => fetch('http://localhost:5000/blog')
+                loader: () => fetch('https://techsync-server.vercel.app/blog')
             },
             {
                 path: '/reset-password',
