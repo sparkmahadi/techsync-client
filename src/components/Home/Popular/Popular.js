@@ -15,7 +15,7 @@ const Popular = () => {
 
 
     return (
-        <div className='pt-20 faq-div'>
+        <div className='mt-10 lg:mt-20 faq-div'>
             <h3 className='text-3xl font-semibold mb-2 text-center'>Popular Courses</h3>
             <p className='mb-5 text-center'>Learn something completely new or improve your existing skills</p>
             <hr className="mb-5 border-gray-300" />

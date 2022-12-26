@@ -4,7 +4,7 @@ import './Hero.css'
 
 const Hero = () => {
     return (
-        <div className="lg:py-10">
+        <div className="lg:pt-10">
             <div className="grid gap-10 lg:grid-cols-2">
                 <div data-aos="fade-right" data-aos-duration="1000" className="home-div">
                     <a
